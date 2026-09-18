@@ -1,0 +1,374 @@
+/* ============================================================
+   贝海CRM 设计系统 · 飞书设计语言 (Feishu Design Language)
+   ------------------------------------------------------------
+   色板对齐飞书开放平台设计规范：
+   主色 #3370FF / 文字三级 / 浅色侧边栏 / 细边框轻阴影
+   ============================================================ */
+
+/* ---------- 设计令牌 (Design Tokens) ---------- */
+:root {
+  /* ===== 品牌主色（飞书蓝）===== */
+  --color-primary: #3370ff;
+  --color-primary-light: #4c88ff;
+  --color-primary-lighter: #e1e9ff;
+  --color-primary-dark: #2952cc;
+  --color-primary-active: #1f3fbf;
+
+  /* ===== 功能色 ===== */
+  --color-success: #34c724;
+  --color-success-light: #e8f7e5;
+  --color-warning: #ff8800;
+  --color-warning-light: #fff3e0;
+  --color-danger: #f54a45;
+  --color-danger-light: #feeceb;
+  --color-info: #646a73;
+  --color-info-light: #f2f3f5;
+
+  /* ===== 中性色（飞书文字三级体系）===== */
+  --color-text-primary: #1f2329;    /* 主要文字 */
+  --color-text-regular: #333639;    /* 正文 */
+  --color-text-secondary: #646a73;  /* 次要文字 */
+  --color-text-placeholder: #8f959e; /* 占位/辅助 */
+  --color-text-disabled: #bbbfc4;   /* 禁用 */
+
+  /* ===== 边框 ===== */
+  --color-border: #dee0e3;
+  --color-border-light: #e5e6eb;
+  --color-border-extra-light: #f0f1f3;
+
+  /* ===== 背景 ===== */
+  --color-bg-page: #f5f6f7;         /* 飞书页面灰 */
+  --color-bg-card: #ffffff;
+  --color-bg-header: #ffffff;
+  --color-bg-hover: #f2f3f5;        /* 飞书悬停灰 */
+  --color-bg-fill: #f2f3f5;
+  /* 侧边栏（飞书蓝灰：#E0EBF7，选中项用更深的蓝以便区分） */
+  --color-bg-sidebar: #e0ebf7;
+  --color-bg-sidebar-hover: #d3e0f2;
+  --color-bg-sidebar-active: #ccd8f8;   /* 选中项底色：#2955E7 的浅色调 */
+  --color-sidebar-text: #1f2329;
+  --color-sidebar-text-secondary: #646a73;
+  --color-sidebar-active-text: #1f2329;
+  --color-sidebar-active-icon: #2955e7; /* 选中项图标蓝（R41 G85 B231） */
+  --color-sidebar-border: #c9d6e8;
+
+  /* ===== 间距 ===== */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 12px;
+  --spacing-lg: 16px;
+  --spacing-xl: 20px;
+  --spacing-2xl: 24px;
+  --spacing-3xl: 32px;
+
+  /* ===== 圆角（飞书以 6px 为主）===== */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+
+  /* ===== 阴影（飞书极轻阴影）===== */
+  --shadow-sm: 0 1px 2px rgba(31, 35, 41, 0.04);
+  --shadow-md: 0 2px 8px rgba(31, 35, 41, 0.06);
+  --shadow-lg: 0 6px 24px rgba(31, 35, 41, 0.1);
+  --shadow-card: 0 1px 2px rgba(31, 35, 41, 0.03);
+  --shadow-popover: 0 4px 20px rgba(31, 35, 41, 0.12);
+
+  /* ===== 侧边栏宽度 ===== */
+  --sidebar-width: 220px;
+
+  /* ===== 过渡 ===== */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.25s ease;
+
+  /* ===== Element Plus 主题色覆盖（飞书蓝）===== */
+  --el-color-primary: #3370ff;
+  --el-color-primary-light-3: #6b9aff;
+  --el-color-primary-light-5: #9cbbff;
+  --el-color-primary-light-7: #c3d3ff;
+  --el-color-primary-light-8: #d9e3ff;
+  --el-color-primary-light-9: #e1e9ff;
+  --el-color-primary-dark-2: #2952cc;
+  --el-color-success: #34c724;
+  --el-color-success-light-3: #70d763;
+  --el-color-success-light-5: #9ce492;
+  --el-color-success-light-7: #c7f0be;
+  --el-color-success-light-8: #dbf5d4;
+  --el-color-success-light-9: #e8f7e5;
+  --el-color-success-dark-2: #2a9f1d;
+  --el-color-warning: #ff8800;
+  --el-color-warning-light-3: #ffa940;
+  --el-color-warning-light-5: #ffc380;
+  --el-color-warning-light-7: #ffdcae;
+  --el-color-warning-light-8: #ffe8c7;
+  --el-color-warning-light-9: #fff3e0;
+  --el-color-warning-dark-2: #d97206;
+  --el-color-danger: #f54a45;
+  --el-color-danger-light-3: #f8807c;
+  --el-color-danger-light-5: #faa5a2;
+  --el-color-danger-light-7: #fcc8c6;
+  --el-color-danger-light-9: #feeceb;
+  --el-color-danger-dark-2: #d83931;
+  --el-color-error: #f54a45;
+  --el-color-error-light-3: #f8807c;
+  --el-color-error-light-5: #faa5a2;
+  --el-color-error-light-7: #fcc8c6;
+  --el-color-error-light-9: #feeceb;
+  --el-color-error-dark-2: #d83931;
+  --el-color-info: #8f959e;
+  --el-color-info-light-3: #b2b6bc;
+  --el-color-info-light-5: #c7cacd;
+  --el-color-info-light-7: #dbdddf;
+  --el-color-info-light-8: #e7e8ea;
+  --el-color-info-light-9: #f2f3f5;
+  --el-color-info-dark-2: #6e747c;
+
+  --el-text-color-primary: #1f2329;
+  --el-text-color-regular: #333639;
+  --el-text-color-secondary: #646a73;
+  --el-text-color-placeholder: #8f959e;
+  --el-text-color-disabled: #bbbfc4;
+
+  --el-border-color: #dee0e3;
+  --el-border-color-light: #e5e6eb;
+  --el-border-color-lighter: #eaecf0;
+  --el-border-color-extra-light: #f0f1f3;
+
+  --el-fill-color: #f2f3f5;
+  --el-fill-color-light: #f5f6f7;
+  --el-fill-color-lighter: #f8f9fa;
+  --el-fill-color-extra-light: #fafbfc;
+  --el-fill-color-blank: #ffffff;
+
+  --el-bg-color: #ffffff;
+  --el-bg-color-page: #f5f6f7;
+  --el-bg-color-overlay: #ffffff;
+
+  --el-border-radius-base: 6px;
+  --el-border-radius-small: 4px;
+  --el-border-radius-round: 20px;
+  --el-font-size-base: 14px;
+}
+
+/* ---------- 全局重置 ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Hiragino Sans GB',
+    'Microsoft YaHei', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background-color: var(--color-bg-page);
+  color: var(--color-text-primary);
+  font-size: 15px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+#app {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* ---------- Element Plus 覆盖 ---------- */
+
+/* 按钮 */
+.el-button {
+  border-radius: var(--radius-md);
+  font-weight: 500;
+  transition: all var(--transition-fast);
+}
+
+.el-button--primary {
+  --el-button-bg-color: var(--color-primary);
+  --el-button-border-color: var(--color-primary);
+  --el-button-hover-bg-color: var(--color-primary-light);
+  --el-button-hover-border-color: var(--color-primary-light);
+  --el-button-active-bg-color: var(--color-primary-dark);
+  --el-button-active-border-color: var(--color-primary-dark);
+}
+
+/* 文字按钮悬停底色（飞书风格） */
+.el-button.is-text:not(.is-disabled):hover {
+  background-color: var(--color-bg-hover);
+}
+
+/* 卡片 */
+.el-card {
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  overflow: visible;
+}
+
+.el-card__header {
+  padding: var(--spacing-lg) var(--spacing-xl);
+  border-bottom: 1px solid var(--color-border-light);
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.el-card__body {
+  padding: var(--spacing-xl);
+}
+
+/* 表格（飞书：浅灰表头、无竖线、细横线） */
+.el-table {
+  --el-table-border-color: var(--color-border-light);
+  --el-table-header-bg-color: #f8f9fa;
+  --el-table-header-text-color: var(--color-text-secondary);
+  --el-table-row-hover-bg-color: var(--color-bg-hover);
+  --el-table-text-color: var(--color-text-regular);
+  width: 100%;
+  font-size: 14px;
+}
+
+.el-table th.el-table__cell {
+  font-weight: 500;
+  font-size: 13px;
+}
+
+.el-table td.el-table__cell {
+  padding: 10px 0;
+}
+
+/* 分页 */
+.el-pagination {
+  --el-pagination-font-size: 14px;
+  margin-top: var(--spacing-lg);
+  justify-content: flex-end;
+}
+
+/* 表单 */
+.el-form-item__label {
+  font-weight: 500;
+  color: var(--color-text-regular);
+}
+
+/* 输入框 */
+.el-input__wrapper,
+.el-select__wrapper {
+  border-radius: var(--radius-md);
+  box-shadow: 0 0 0 1px var(--el-border-color) inset;
+  transition: box-shadow var(--transition-fast);
+}
+
+.el-input__wrapper:hover,
+.el-select__wrapper:hover {
+  box-shadow: 0 0 0 1px var(--el-color-primary-light-5) inset;
+}
+
+.el-input__wrapper.is-focus,
+.el-select__wrapper.is-focused {
+  box-shadow: 0 0 0 1px var(--el-color-primary) inset;
+}
+
+/* 标签 */
+.el-tag {
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+}
+
+/* 对话框 */
+.el-dialog {
+  border-radius: var(--radius-xl);
+}
+
+.el-dialog__header {
+  padding: var(--spacing-xl) var(--spacing-xl) var(--spacing-lg);
+  margin-right: 0;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.el-dialog__body {
+  padding: var(--spacing-xl);
+}
+
+.el-dialog__footer {
+  padding: var(--spacing-lg) var(--spacing-xl) var(--spacing-xl);
+  border-top: 1px solid var(--color-border-light);
+}
+
+/* 下拉菜单 */
+.el-dropdown-menu {
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-popover);
+  border: 1px solid var(--color-border-light);
+}
+
+/* 面包屑 */
+.el-breadcrumb__inner {
+  color: var(--color-text-secondary);
+}
+
+.el-breadcrumb__inner.is-link:hover {
+  color: var(--color-primary);
+}
+
+/* 消息提示圆角 */
+.el-message {
+  border-radius: var(--radius-lg);
+}
+
+/* ---------- 页面通用样式 ---------- */
+
+/* 列表页面容器 */
+.page-container {
+  padding: 0;
+}
+
+/* 筛选栏 */
+.filter-section {
+  margin-bottom: var(--spacing-lg);
+}
+
+.filter-section .el-form-item {
+  margin-bottom: var(--spacing-sm);
+}
+
+/* 工具栏 */
+.toolbar-section {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-lg);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+/* 表格区域 */
+.table-section {
+  margin-bottom: 0;
+}
+
+/* 分页区域 */
+.pagination-section {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid var(--color-border-light);
+  margin-top: var(--spacing-lg);
+}
+
+/* ---------- 工具类 ---------- */
+.text-primary { color: var(--color-primary); }
+.text-success { color: var(--color-success); }
+.text-warning { color: var(--color-warning); }
+.text-danger { color: var(--color-danger); }
+.text-info { color: var(--color-info); }
+.text-secondary { color: var(--color-text-secondary); }
+
+.font-bold { font-weight: 600; }
+.font-medium { font-weight: 500; }
+
+.flex { display: flex; }
+.flex-center { display: flex; align-items: center; justify-content: center; }
+.flex-between { display: flex; align-items: center; justify-content: space-between; }
+
+.gap-sm { gap: var(--spacing-sm); }
+.gap-md { gap: var(--spacing-md); }
+.gap-lg { gap: var(--spacing-lg); }

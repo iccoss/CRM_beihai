@@ -1,0 +1,58 @@
+# 依赖
+node_modules/
+package-lock.json
+yarn.lock
+
+# 构建输出
+dist/
+build/
+*.log
+
+# 数据库
+*.db
+*.db-journal
+*.db.*.bak
+*.db.backup-*
+database/*.db
+database/*.db-journal
+database/.jwt-secret
+*.migration-report.json
+
+# 环境配置
+.env
+.env.local
+.env.*.local
+
+# 编辑器
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 系统文件
+.DS_Store
+Thumbs.db
+._*
+
+# 临时文件
+tmp/
+temp/
+*.tmp
+
+# 上传文件
+uploads/
+*/uploads/
+
+# 日志
+logs/
+*.log
+
+# 测试
+coverage/
+.nyc_output/
+
+# 部署
+deploy/
+*.sh
+!*.sh

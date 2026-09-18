@@ -1,0 +1,15 @@
+{
+  "name": "crm-system",
+  "version": "3.0.1",
+  "description": "CRM 客户关系管理系统",
+  "scripts": {
+    "dev": "node node_modules/concurrently/dist/bin/concurrently.js \"npm run server\" \"npm run client\"",
+    "server": "cd backend && npm run dev",
+    "client": "cd frontend && npm run dev",
+    "install:all": "npm install && cd backend && npm install && cd ../frontend && npm install",
+    "migrate:production": "node backend/scripts/migrate-v01-production.js"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
